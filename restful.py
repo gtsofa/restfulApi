@@ -22,6 +22,16 @@ def returnOne(name):
     langs = [language for language in languages if language['name'] == name]
     return jsonify({'language': langs[0]})
 
+# Perform POST REQUEST NOW.
+@app.route('/lang', methods=['POST'])
+def addOne():
+    # create a dic key will have json object and whatever value needs to be passed
+    language = {'name': request.json['name']}
+
+    languages.append(language)
+
+    return jsonify({'languages': languages})
+
 
 
 if __name__ == '__main__':
