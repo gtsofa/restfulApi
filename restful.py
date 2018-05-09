@@ -34,7 +34,7 @@ def addOne():
 
 
 # perform PUT REQUEST
-@app.route('/lang/<name:string>', methods=['PUT'])
+@app.route('/lang/<string:name>', methods=['PUT'])
 def editOne(name):
     langs = [language for language in languages if language['name'] == name]
     langs[0]['name'] = request.json['name']
