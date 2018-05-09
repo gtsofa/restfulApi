@@ -33,6 +33,14 @@ def addOne():
     return jsonify({'languages': languages})
 
 
+# perform PUT REQUEST
+@app.route('/lang/<name:string>', methods=['PUT'])
+def editOne(name):
+    langs = [language for language in languages if language['name'] == name]
+    langs[0]['name'] = request.json['name']
+    return jsonify({'languages': langs[0]})
+
+
 
 if __name__ == '__main__':
     #app.run(debug=True)
