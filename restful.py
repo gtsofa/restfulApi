@@ -27,7 +27,7 @@ def returnOne(name):
 def addOne():
     # create a dic key will have json object and whatever value needs to be passed
     language = {'name': request.json['name']}
-
+    print(language)
     languages.append(language)
 
     return jsonify({'languages': languages})
@@ -35,4 +35,5 @@ def addOne():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True) # c9
